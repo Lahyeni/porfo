@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+      .small-chart {
+        width: 80%;
+        height: 100px;
+        margin: 0 auto;
+      }
+
+      .card {
+        margin: 20px;
+      }
+      
+      /* Conteneur principal */
+.logo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+/* Style pour chaque logo */
+.logo-item {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #2d3e50; /* Couleur de la bordure */
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
+  background-color: #fff;
+  transition: transform 0.3s ease; /* Animation au survol */
+}
+
+/* Animation au survol */
+.logo-item:hover {
+  transform: scale(1.1);
+}
+
+/* Style pour les images des logos */
+.logo-item img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain; /* Conserve les proportions */
+}
+
+    </style>
+</head>
+
+<body>
+
+    <section id="contact">
+        <h1>Let's find out about my Skills...</h1>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Skills</h5>
+                        <canvas id="skillsChart" class="small-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Language Proficiency</h5>
+                        <canvas id="languageChart" class="small-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctxSkills = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctxSkills, {
+          type: 'radar',
+          data: {
+            labels: ['Programming', 'Testing', 'Data Analysis', 'Design', 'Communication', 'Problem Solving'],
+            datasets: [
+              {
+                label: 'Hard Skills', 
+                data: [90, 80, 85, 40, 65, 70],
+                fill: false,
+                borderColor: 'rgba(108, 99, 255, 1)',
+                tension: 0.1,
+                borderWidth: 2
+              },
+
+            ]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              r: {
+                angleLines: {
+                  display: true
+                },
+                suggestedMin: 0,
+                suggestedMax: 100
+              }
+            },
+            plugins: {
+              legend: {
+                position: 'top'
+              }
+            }
+          }
+        });
+        const ctxLanguage = document.getElementById('languageChart').getContext('2d');
+        const languageChart = new Chart(ctxLanguage, {
+          type: 'radar',
+          data: {
+            labels: ['Arabic', 'French', 'English', 'Turkish'],
+            datasets: [{
+              label: 'Language Proficiency',
+              data: [90, 80, 65, 45],
+              fill: false,
+              borderColor: 'rgba(255, 99, 132, 1)',
+              tension: 0.1,
+              borderWidth: 2
+            }]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              r: {
+                angleLines: {
+                  display: true
+                },
+                suggestedMin: 0,
+                suggestedMax: 100
+              }
+            },
+            plugins: {
+              legend: {
+                position: 'top'
+              }
+            }
+          }
+        });
+    </script>
+<div class="logo-container">
+  <div class="logo-item">
+    <img src="img/ang.jpg" alt="Angular">
+  </div>
+  <div class="logo-item">
+    <img src="img/html.png" alt="HTML5">
+  </div>
+  <div class="logo-item">
+    <img src="img/js.png" alt="TypeScript">
+  </div>
+  <div class="logo-item">
+    <img src="img/css.png" alt="CSS3">
+  </div>
+  <div class="logo-item">
+    <img src="img/téléchargement.jfif" alt="Swagger">
+  </div>
+  <div class="logo-item">
+    <img src="img/téléchargement.png" alt="Elephant (PHP)">
+  </div>
+  <div class="logo-item">
+    <img src="img/arch.png" alt="MySQL">
+  </div>
+  <div class="logo-item">
+    <img src="img/post.png" alt="phpMyAdmin">
+  </div>
+  <div class="logo-item">
+    <img src="img/lara.png" alt="Laravel">
+  </div>
+</div>
+
+
+    <section id="contact">
+        <h1>Let's work together...</h1>
+        <h4>How do you take your coffee?</h4>
+        <p><a href="">Email: lahyeniahmed5@gmail.com</a></p>
+        <p><a href="">Call us: +216 26300484</a></p>
+    </section>
+
+</body>
+</html>

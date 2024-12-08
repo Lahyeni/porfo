@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      .header {
+        text-align: center;
+        padding: 20px;
+        background-color: #6c63ff;
+        color: white;
+      }
+
+      .steps {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .steps h2 {
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
+
+      .step-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 40px;
+      }
+
+      .step {
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .step:hover {
+        transform: scale(1.1);
+      }
+
+      .step span {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        background-color: #6c63ff;
+        color: #fff;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .step p {
+        font-size: 16px;
+        font-weight: 600;
+        color: #555;
+      }
+
+      .step.active span {
+        background-color: #4CAF50;
+      }
+
+      .step::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #ddd;
+        top: 20px;
+        z-index: -1;
+      }
+
+      .step:last-child::after {
+        display: none;
+      }
+
+      .skills {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .skills canvas {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: 30px;
+        font-size: 14px;
+        background-color: #6c63ff;
+        color: white;
+      }
+
+      /* Step content visibility */
+      .step-content {
+        display: none;
+        padding: 20px;
+        margin-top: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      /* Fade-in effect for content */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* Show active step description */
+      .step-content.active {
+        display: block;
+      }
+
+      .step-content img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+/* Style du bouton */
+.btn-show-more {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff; /* Couleur bleue */
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effet au survol */
+.btn-show-more:hover {
+    background-color: #4CAF50; /* Couleur bleue foncée */
+    transform: scale(1.05); /* Agrandissement léger */
+}
+
+    </style>
+</head>
+<body>
+
+    <section id="contact">
+        <h1>My Journey</h1>
+        <p>Explore my academic and professional timeline</p> 
+    </section>
+
+    <!-- Steps Section -->
+    <div class="steps">
+        <h2>My Professional Journey</h2>
+        <div class="step-container">
+            <div class="step active" onclick="showStep(1)">
+                <span>1</span>
+                <p>Bachelor's Degree</p>
+            </div>
+            <div class="step" onclick="showStep(2)">
+                <span>2</span>
+                <p>Internship at GPC</p>
+            </div>
+            <div class="step" onclick="showStep(3)">
+                <span>3</span>
+                <p>Internship at ASM</p>
+            </div>
+            <div class="step" onclick="showStep(4)">
+                <span>4</span>
+                <p>Bachelor's Degree</p>
+            </div>
+            <div class="step" onclick="showStep(5)">
+                <span>5</span>
+                <p>Software Tester at KPIT</p>
+            </div>
+
+        </div>
+
+        <!-- Step 1 - Bachelor's Degree -->
+        <div class="step-content" id="step1">
+            <h3>Step 1: Beginning</h3>
+            <p>I started my studies at ISIMS after obtaining my scientific baccalaureate, marking the beginning of my academic journey in the field of computer science.</p>
+            <img src="img/imagea.jfif" alt="Bachelor's Degree Image">
+        </div>
+
+        <!-- Step 2 - Internship at ASM -->
+        <div class="step-content" id="step3">
+          <h3>Step 3: Internship at ASM</h3>
+          <p>In early 2024, I developed a web application for managing the rental and maintenance of shopping centers using Angular and Laravel. This project enhanced my web development skills.</p>
+          <img src="img/images.jfif" alt="Internship at ASM"><br>
+          
+          <!-- Bouton "Afficher plus" -->
+          <a href="asm.html" class="btn-show-more">Afficher plus</a>
+        </div>
+        
+
+        <!-- Step 3 - Internship at GPC -->
+        <div class="step-content" id="step2">
+            <h3>Step 2: Internship at GPC</h3>
+            <p>Between June and August 2023, I built a photovoltaic data simulator, helping users visualize the best solar panel installations using APIs.</p>
+            <img src="img/images.png" alt="Internship at GPC"><br>
+            <a href="asm.html" class="btn-show-more">Afficher plus</a>
+
+        </div>
+
+        <!-- Step 4 - Software Tester at KPIT -->
+        <div class="step-content" id="step5">
+            <h3>Step 5: Software Tester at KPIT</h3>
+            <p>Currently, I am working as a Software Tester at KPIT while pursuing further studies. I focus on quality assurance and software validation.</p>
+            <img src="img/kpit.jpg">
+        </div>
+
+        <!-- Step 5 - Future Goals -->
+        <div class="step-content" id="step4">
+            <h3>Step 4: Bachelor's Degree</h3>
+            <p>I graduated with a Bachelor's degree in Computer Science from the Higher Institute of Computer Science and Multimedia of Sfax (2021 - 2024). I specialized in data analysis and Big Data.</p>
+            <img src="img/deg.png" alt="Bachelor's Degree Image">
+        </div>
+    </div>
+
+    <section id="contact">
+        <h1>Let's work together...</h1>
+        <h4>How do you take your coffee?</h4>
+        <p><a href="">Email: jayabe@gmail.com</a></p>
+        <p><a href="">Call us: +12345678910</a></p>
+    </section>
+
+    <script>
+        // Function to show the step content based on clicked step
+        function showStep(stepNumber) {
+            // Hide all step content
+            const stepContents = document.querySelectorAll('.step-content');
+            stepContents.forEach(step => step.classList.remove('active'));
+
+            // Show the clicked step content
+            const stepToShow = document.getElementById('step' + stepNumber);
+            stepToShow.classList.add('active');
+
+            // Update active step style
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(step => step.classList.remove('active'));
+            steps[stepNumber - 1].classList.add('active');
+        }
+    </script>
+</body>
+</html>

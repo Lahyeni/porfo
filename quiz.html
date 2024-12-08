@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprehensive Quiz</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #6c63ff;
+    }
+
+    .quiz-section {
+      margin-bottom: 20px;
+    }
+
+    .btn-submit {
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Comprehensive Quiz on IT and Web Development</h1>
+  
+  <!-- Quiz Section -->
+  <div class="quiz-section">
+    <div id="quiz-container">
+      <!-- Question 1 -->
+      <div class="quiz-question">
+        <p><strong>1. Which of the following is a front-end framework?</strong></p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="Angular">
+          <label class="form-check-label">Angular</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="Laravel">
+          <label class="form-check-label">Laravel</label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="quiz-question">
+        <p><strong>2. Which programming language is primarily used for web development?</strong></p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="JavaScript">
+          <label class="form-check-label">JavaScript</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="Python">
+          <label class="form-check-label">Python</label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="quiz-question">
+        <p><strong>3. Which is a popular database management system?</strong></p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="MySQL">
+          <label class="form-check-label">MySQL</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="Node.js">
+          <label class="form-check-label">Node.js</label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="quiz-question">
+        <p><strong>4. Which is not a programming language?</strong></p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="Python">
+          <label class="form-check-label">Python</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="HTML">
+          <label class="form-check-label">HTML</label>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="quiz-question">
+        <p><strong>5. Which is a version control system?</strong></p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="Git">
+          <label class="form-check-label">Git</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="HTTP">
+          <label class="form-check-label">HTTP</label>
+        </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="quiz-question">
+        <p><strong>6. Which HTML tag is used to define a hyperlink?</strong></p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="<a>">
+          <label class="form-check-label">&lt;a&gt;</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="<link>">
+          <label class="form-check-label">&lt;link&gt;</label>
+        </div>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="quiz-question">
+        <p><strong>7. Which CSS property controls the layout of a page?</strong></p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" value="Display">
+          <label class="form-check-label">Display</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" value="Position">
+          <label class="form-check-label">Position</label>
+        </div>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="quiz-question">
+        <p><strong>8. Which web protocol is used to transfer data securely?</strong></p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q8" value="HTTPS">
+          <label class="form-check-label">HTTPS</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q8" value="FTP">
+          <label class="form-check-label">FTP</label>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Submit Section -->
+    <div class="text-center">
+      <button class="btn-submit" id="submit">Submit</button>
+    </div>
+  </div>
+
+  <!-- Score Section -->
+  <div class="text-center" id="score-container" style="display:none; margin-top:20px;">
+    <h3>Your Score: <span id="score"></span></h3>
+  </div>
+</div>
+
+<script>
+  function calculateScore() {
+    let score = 0;
+
+    const answers = [
+      { name: "q1", correct: "Angular" },
+      { name: "q2", correct: "JavaScript" },
+      { name: "q3", correct: "MySQL" },
+      { name: "q4", correct: "HTML" },
+      { name: "q5", correct: "Git" },
+      { name: "q6", correct: "<a>" },
+      { name: "q7", correct: "Display" },
+      { name: "q8", correct: "HTTPS" }
+    ];
+
+    answers.forEach(ans => {
+      const userAnswer = document.querySelector(`input[name="${ans.name}"]:checked`);
+      if (userAnswer && userAnswer.value === ans.correct) {
+        score++;
+      }
+    });
+
+    document.getElementById('score').innerText = score + '/' + answers.length;
+    document.getElementById('score-container').style.display = 'block';
+  }
+
+  document.getElementById('submit').addEventListener('click', calculateScore);
+</script>
+
+</body>
+</html>
